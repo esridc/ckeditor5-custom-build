@@ -12,6 +12,8 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+
 
 class ClassicEditor extends ClassicEditorBase {}
 
@@ -24,7 +26,8 @@ const PLUGINS = {
 	Paragraph,
 	PasteFromOffice,
 	TextTransformation,
-	Mention
+    Mention,
+    CodeBlock
 };
 
 const defaultPlugins = Object.values(PLUGINS);
@@ -39,7 +42,8 @@ const defaultConfig = {
 			'link',
 			'|',
 			'undo',
-			'redo'
+            'redo',
+            'code-block'
 		]
 	},
 	language: 'en'
