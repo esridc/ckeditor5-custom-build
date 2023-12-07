@@ -3,7 +3,7 @@
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
-import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
+import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
@@ -20,50 +20,58 @@ import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 
-// You can read more about extending the build with additional plugins in the "Installing plugins" guide.
-// See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
+class ClassicEditor extends ClassicEditorBase {};
 
-class Editor extends ClassicEditor {
-	public static override builtinPlugins = [
-		Alignment,
-		BlockQuote,
-		Bold,
-		Essentials,
-		Heading,
-		Indent,
-		Italic,
-		Link,
-		List,
-		Mention,
-		Paragraph,
-		PasteFromOffice,
-		RemoveFormat,
-		TextTransformation
-	];
+const PLUGINS = {
+  Alignment,
+  Bold,
+  BlockQuote,
+  Essentials,
+  Heading,
+  Indent,
+  Italic,
+  Link,
+  List,
+  Mention,
+  Paragraph,
+  PasteFromOffice,
+  RemoveFormat,
+  TextTransformation
+};
 
-	public static override defaultConfig: EditorConfig = {
-		toolbar: {
-			items: [
-				'heading',
-				'|',
-				'bold',
-				'italic',
-				'blockQuote',
-				'removeFormat',
-				'link',
-				'|',
-				'bulletedList',
-				'numberedList',
-				'alignment',
-				'outdent',
-				'indent',
-				'|',
-				'undo',
-				'redo'
-			]
-		},
-		language: 'en'
-	};
-}
+const defaultPlugins = Object.values(PLUGINS);
 
-export default Editor;
+const defaultConfig: EditorConfig = {
+  toolbar: {
+    items: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'blockQuote',
+      'removeFormat',
+      'link',
+      '|',
+      'bulletedList',
+      'numberedList',
+      'alignment',
+      'outdent',
+      'indent',
+      '|',
+      'undo',
+      'redo'
+    ]
+  },
+  language: 'en'
+};
+
+// Plugins to include in the build.
+ClassicEditor.builtinPlugins = defaultPlugins;
+
+// Editor configuration.
+ClassicEditor.defaultConfig = defaultConfig;
+
+export default {
+  ClassicEditor,
+  PLUGINS
+};
