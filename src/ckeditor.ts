@@ -19,6 +19,7 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
+import { LICENSE_KEY} from './license';
 
 class ClassicEditor extends ClassicEditorBase {};
 
@@ -42,6 +43,7 @@ const PLUGINS = {
 const defaultPlugins = Object.values(PLUGINS);
 
 const defaultConfig: EditorConfig = {
+  licenseKey: LICENSE_KEY,
   toolbar: {
     items: [
       'heading',
