@@ -8,7 +8,7 @@ import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
-import { Indent } from '@ckeditor/ckeditor5-indent';
+import { Indent, IndentBlock } from '@ckeditor/ckeditor5-indent';
 import { Link } from '@ckeditor/ckeditor5-link';
 import { List } from '@ckeditor/ckeditor5-list';
 import { Mention } from '@ckeditor/ckeditor5-mention';
@@ -27,6 +27,7 @@ declare const _default: {
         Essentials: typeof Essentials;
         Heading: typeof Heading;
         Indent: typeof Indent;
+        IndentBlock: typeof IndentBlock;
         Italic: typeof Italic;
         Link: typeof Link;
         List: typeof List;
