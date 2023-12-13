@@ -11,7 +11,7 @@ import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import type { EditorConfig } from '@ckeditor/ckeditor5-core';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
-import { Indent } from '@ckeditor/ckeditor5-indent';
+import { Indent, IndentBlock } from '@ckeditor/ckeditor5-indent';
 import { Link } from '@ckeditor/ckeditor5-link';
 import { List } from '@ckeditor/ckeditor5-list';
 import { Mention } from '@ckeditor/ckeditor5-mention';
@@ -29,6 +29,7 @@ const PLUGINS = {
   Essentials,
   Heading,
   Indent,
+  IndentBlock,
   Italic,
   Link,
   List,
